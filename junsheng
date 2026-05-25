@@ -1,0 +1,90 @@
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    grayBase: '#0d0f12',
+                    graySec: '#14181f',
+                    grayCard: '#1c222b',
+                    brandOrange: '#ff5500',
+                    brandHover: '#e04b00',
+                    textMuted: '#64748b'
+                },
+                fontFamily: {
+                    sans: ['Noto Sans TC', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    /* 建設風格藍圖網格背景 */
+    .blueprint-bg {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+            linear-gradient(to right, rgba(255, 85, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 85, 0, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .section-title {
+        position: relative;
+        padding-left: 1rem;
+        border-left: 4px solid #ff5500;
+    }
+
+    .glass-nav {
+        background-color: rgba(13, 15, 18, 0.9);
+        backdrop-filter: blur(12px);
+    }
+
+    .img-hover-zoom {
+        overflow: hidden;
+        background-color: #1c222b; /* 圖片載入前的底色 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .img-hover-zoom img {
+        transition: transform 0.6s ease;
+    }
+    .group:hover .img-hover-zoom img {
+        transform: scale(1.08);
+    }
+
+    .btn-outline-custom {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    .btn-outline-custom::before {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%; width: 100%; height: 100%;
+        background-color: #ff5500;
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+    .btn-outline-custom:hover::before {
+        left: 0;
+    }
+    .btn-outline-custom:hover {
+        color: #fff;
+        border-color: #ff5500;
+    }
+</style>
